@@ -17,4 +17,4 @@ let recipe =
 		  [] : List Text
 	  }
 
-in  emptyRecipe
+in  recipe
