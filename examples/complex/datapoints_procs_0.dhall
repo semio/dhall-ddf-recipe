@@ -6,7 +6,7 @@ the state Georgia of US, which conflicts with country Georgia.
 
 -}
 
-let P = ../render/procedure.dhall
+let P = ../../render/procedure.dhall
 
 in  [ P.translate_column.run
 	  { ingredients =

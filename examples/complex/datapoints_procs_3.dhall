@@ -3,7 +3,7 @@
 -}
 
 
-let P = ../render/procedure.dhall
+let P = ../../render/procedure.dhall
 
 let indicatorList = ./SGIndicatorList.dhall
 

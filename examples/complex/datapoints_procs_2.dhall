@@ -4,7 +4,7 @@ align datapoints to open-numbers geo domain
 
 -}
 
-let P = ../render/procedure.dhall
+let P = ../../render/procedure.dhall
 
 in  [ P.translate_column.run
 	  { ingredients =

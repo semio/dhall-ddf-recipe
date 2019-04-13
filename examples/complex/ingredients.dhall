@@ -6,11 +6,9 @@ let gw_dataset = "open-numbers/ddf--gapminder--gapminder_world"
 
 let open_numbers = "open-numbers/ddf--open_numbers"
 
-let Ing = ../render/ingredient.dhall
+let Ing = ../../render/ingredient.dhall
 
 let indicatorList = ./SGIndicatorList.dhall
-
-let filter = ../types/IngredientValueFilter.dhall
 
 in  [ Ing.DataSet
 	  { id =
@@ -20,7 +18,7 @@ in  [ Ing.DataSet
 	  , key =
 		  "sex, cause, age, location, year"
 	  , value =
-		  filter.ListFilter
+		  Ing.value_filter.list
 		  [ "deaths_rate"
 		  , "deaths_number"
 		  , "incidence_number"
@@ -45,7 +43,7 @@ in  [ Ing.DataSet
 	  , key =
 		  "geo,time"
 	  , value =
-		  filter.ListFilter indicatorList
+		  Ing.value_filter.list indicatorList
 	  }
 	, Ing.DataSet
 	  { id =

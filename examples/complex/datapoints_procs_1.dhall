@@ -18,7 +18,7 @@ let Rec = ./Record.dhall
 
 let Record = Rec.Record
 
-let P = ../render/procedure.dhall
+let P = ../../render/procedure.dhall
 
 let filterProc =
 		λ(ingredient : Text)
@@ -144,14 +144,14 @@ let concatMap = https://prelude.dhall-lang.org/List/concatMap
 let deaths_procs =
 	  concatMap
 	  Record
-	  ./../types/Procedure.dhall
+	  ../../types/Procedure.dhall
 	  (buildProcs "gbd-datapoints")
 	  mappings.deaths
 
 let incidence_procs =
 	  concatMap
 	  Record
-	  ./../types/Procedure.dhall
+	  ../../types/Procedure.dhall
 	  (buildProcs "gbd-datapoints")
 	  mappings.incidence
 
