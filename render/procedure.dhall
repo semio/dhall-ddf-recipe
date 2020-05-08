@@ -4,7 +4,7 @@
 	./filter.dhall
 , translate_header =
 	./translate_header.dhall
-, _merge =
+, merge =
 	./merge.dhall
 , flatten =
 	./flatten.dhall
