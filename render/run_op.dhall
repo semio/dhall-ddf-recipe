@@ -10,4 +10,4 @@ let run_op =
 
 let Op = λ(k : Text) → λ(v : Text) → { mapKey = k, mapValue = v }
 
-in  { run = run_op, Op = Op }
+in  { run = run_op, Op }

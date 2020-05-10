@@ -5,8 +5,8 @@ let f = P.flatten
 let shared = ./commonInput.dhall
 
 let flatten =
-		λ(input : shared ⩓ { options : ./../types/flatten_options.dhall })
-	  → f ({ procedure = "flatten" } ⫽ input)
+        λ(input : shared ⩓ { options : ./../types/flatten_options.dhall })
+      → f ({ procedure = "flatten" } ⫽ input)
 
 let defaultOptions = { skip_totals_among_entities = [] : List Text }
 
