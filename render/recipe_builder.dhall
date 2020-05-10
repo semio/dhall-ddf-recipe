@@ -15,17 +15,34 @@ let Cooking =
         }
       }
 
-let Recipe =
+let Config =
       { Type =
-          { cooking : Cooking.Type
-          , include : List Text
-          , ingredients : List Ingredient
+          { ddf_dir : Text
+          , procedures_dir : Text
+          , dictionary_dir : Text
+          , recipes_dir : Text
           }
       , default =
-        { cooking = {=}
-        , include = [] : List Text
-        , ingredients = [] : List Ingredient
+        { ddf_dir = "./"
+        , procedures_dir = "./"
+        , didir = "./"
+        , recipes_dir = "./"
         }
       }
 
-in  { Main = Recipe, Cooking }
+let Recipe =
+      { Type =
+          { include : List Text
+          , config : Config.Type
+          , ingredients : List Ingredient
+          , cooking : Cooking.Type
+          }
+      , default =
+        { include = [] : List Text
+        , config = Config.default
+        , ingredients = [] : List Ingredient
+        , cooking = {=}
+        }
+      }
+
+in  { Main = Recipe, Cooking, Config }
