@@ -1,7 +1,8 @@
 config:
   ddf_dir: ./
   dictionary_dir: ./
-  procedures_dir: ./
+  external_csv_dir: ./
+  procedure_dir: ./
   recipes_dir: ./
 cooking:
   concepts: []

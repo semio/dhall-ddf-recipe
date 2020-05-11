@@ -18,15 +18,17 @@ let Cooking =
 let Config =
       { Type =
           { ddf_dir : Text
-          , procedures_dir : Text
+          , procedure_dir : Text
           , dictionary_dir : Text
           , recipes_dir : Text
+          , external_csv_dir : Text
           }
       , default =
         { ddf_dir = "./"
-        , procedures_dir = "./"
+        , procedure_dir = "./"
         , dictionary_dir = "./"
         , recipes_dir = "./"
+        , external_csv_dir = "./"
         }
       }
 
