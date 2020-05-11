@@ -1,35 +1,37 @@
-include: []
 config:
-  procedures_dir: ./
-  dictionary_dir: ./
-  recipes_dir: ./
   ddf_dir: ./
-cookings:
+  dictionary_dir: ./
+  procedures_dir: ./
+  recipes_dir: ./
+cooking:
+  concepts: []
   datapoints:
   - ingredients:
-    - co2_emission-datapoints
-    - population-datapoints
-    result: datapoints-merged
-    procedure: merge
+    - "co2_emission-datapoints"
+    - "population-datapoints"
     options:
       deep: false
+    procedure: merge
+    result: "datapoints-merged"
   - ingredients:
-    - datapoints-merged
-    result: datapoints-final
-    procedure: run_op
+    - "datapoints-merged"
     options:
       op:
         co2_emission_per_capita: co2_emission / total_population
+    procedure: run_op
+    result: "datapoints-final"
+  entities: []
+include: []
+info:
+  id: "ddf--test--co2_emission_per_capita"
 ingredients:
-- dataset: ddf--cdiac--co2
+- dataset: "ddf--cdiac--co2"
+  id: "co2_mission-datapoints"
+  key: "country, year"
   value:
   - co2_emission
-  key: country, year
-  id: co2_mission-datapoints
-- dataset: ddf--unpop--population
+- dataset: "ddf--unpop--population"
+  id: "population-datapoints"
+  key: "country, year"
   value:
   - total_population
-  key: country, year
-  id: population-datapoints
-info:
-  id: ddf--test--co2_emission_per_capita
