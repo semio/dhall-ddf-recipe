@@ -60,25 +60,22 @@ geo domain, and finally bridge them with data from Gapminder World.
 
  -}
 
-{ info =
-	{ id = "sg-ihme-dataset" }
-, config =
-	{ recipes_dir =
-		"./"
-	, dictionary_dir =
-		"../translation_dictionaries"
-	, external_csv_dir =
-		"../external_csv"
-	, procedure_dir =
-		"./procedure"
-	}
-, ingredients =
-	./ingredients.dhall
-, cooking =
-	{ datapoints =
-		  ./datapoints_procs_0.dhall
-		# ./datapoints_procs_1.dhall
-		# ./datapoints_procs_2.dhall
-		# ./datapoints_procs_3.dhall
-	}
-}
+let Recipe = ../../render/recipe_builder.dhall
+
+in    { info.id = "sg-ihme-dataset" }
+    ∧ Recipe.Main::{
+      , config = Recipe.Config::{
+        , recipes_dir = "./"
+        , dictionary_dir = "../translation_dictionaries"
+        , external_csv_dir = "../external_csv"
+        , procedure_dir = "./procedure"
+        }
+      , ingredients = ./ingredients.dhall
+      , cooking = Recipe.Cooking::{
+        , datapoints =
+              ./datapoints_procs_0.dhall
+            # ./datapoints_procs_1.dhall
+            # ./datapoints_procs_2.dhall
+            # ./datapoints_procs_3.dhall
+        }
+      }
