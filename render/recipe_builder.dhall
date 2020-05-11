@@ -25,7 +25,7 @@ let Config =
       , default =
         { ddf_dir = "./"
         , procedures_dir = "./"
-        , didir = "./"
+        , dictionary_dir = "./"
         , recipes_dir = "./"
         }
       }
